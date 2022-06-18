@@ -1,6 +1,14 @@
 <?php
 session_start();
 include '../assets/controllers/config.php';
+$id_funcionario = $_SESSION['id_funcionario'];
+$tipo_acesso = $_SESSION['tipo_acesso'] ;
+$nome = $_SESSION['nome'];
+$usuario = $_SESSION['usuario'];
+$matricula = $_SESSION['matricula'];
+$token = $_SESSION['token'];
+include '../assets/controllers/checkAcess.php';
+
     $idveiculo = intval($_POST['id']);
 	$sql = $pdo->prepare('SELECT * FROM veiculos AS v  
 	JOIN abastecimentos AS a 

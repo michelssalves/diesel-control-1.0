@@ -33,8 +33,8 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 		}
 
 		if ($tipo_acesso['tipo_acesso'] == 1) {
-			$_SESSION['id_funcionario'] = $id_funcionario['id_funcionario'];
-			$_SESSION['tipo_acesso'] = $tipo_acesso['tipo_acesso'];
+			$_SESSION['id_funcionario'] = $id_funcionario;
+			$_SESSION['tipo_acesso'] = $tipo_acesso;
 			$_SESSION['nome'] = $nome;
 			$_SESSION['usuario'] = $usuario;
 			$_SESSION['matricula'] = $matricula;
@@ -44,13 +44,13 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			header('Location: abastecimento-da-frota');
 			exit();
 		} elseif ($tipo_acesso['tipo_acesso'] == 2) {
-			$_SESSION['id_funcionario'] = $id_funcionario['id_funcionario'];
-			$_SESSION['tipo_acesso'] = $tipo_acesso['tipo_acesso'];
+			$_SESSION['id_funcionario'] = $id_funcionario;
+			$_SESSION['tipo_acesso'] = $tipo_acesso;
 			$_SESSION['nome'] = $nome;
 			$_SESSION['usuario'] = $usuario;
 			$_SESSION['matricula'] = $matricula;
 			$_SESSION['token'] = $token;
-
+			
 			header('Location: controle-almoxarifado');
 			exit();
 		} else {
