@@ -140,10 +140,10 @@ include '../assets/controllers/checkAcess.php';
                                             <td><?php echo $row['setor']; ?></td>
                                             <td>
                                                 <a
-                                                    href="alterar-abastecimento-1.0<?= $row['id_abastecimento']; ?>">Alterar</a>
+                                                    href="alterar-abastecimento-1.0id_abastecimento=<?= $row['id_abastecimento']; ?>">Alterar</a>
                                             </td>
                                             <td>
-                                                <a href="excluir-abastecimento-1.0<?= $row['id_abastecimento']; ?>"
+                                                <a href="excluir-abastecimento-1.0id_abastecimento=<?= $row['id_abastecimento']; ?>"
                                                     onclick="return confirm('Tem certeza que deseja excluir')">Excluir</a>
                                             </td>
                                         </tr>
