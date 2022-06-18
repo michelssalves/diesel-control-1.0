@@ -1,7 +1,9 @@
 <?php
 session_start();
-$msgErroLogin = $_SESSION['msg']; 
+require 'conexao01.php';
 include 'assets/controllers/userDataBaseAcess.php';
+$msgErroLogin = $_SESSION['msg']; 
+
 ?>
 <!doctype html>
 <html lang="en">

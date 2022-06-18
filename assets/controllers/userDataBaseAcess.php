@@ -1,98 +1,68 @@
 <?php
 session_start();
-
-$acao = $_REQUEST['acao'];
-$usuario = addslashes($_POST['usuario']);
-$senha = addslashes($_POST['senha']);
+$acao = $_POST['acao'];
 
 if($acao == 'login'){
-    if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
 
-        login($usuario, $senha);
+if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
+	
+	$usuario = addslashes($_POST['usuario']);
+	$senha = addslashes($_POST['senha']);
 
-}
-
-}
-function login($usuario, $senha){
-
-    include 'config.php';
-
-        $token = md5(time() . rand(0, 9999) . time());
-        $sql = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario AND senha = :senha");
-        $sql->bindValue(':token', $token);
-        $sql->bindValue(':usuario', $usuario);
-        $sql->bindValue(':senha', md5($senha));
-        $sql->execute();
-
-        $sql = $pdo->prepare("SELECT * FROM funcionarios WHERE usuario = :usuario AND senha = :senha");
-        $sql->bindValue(':usuario', $usuario);
-        $sql->bindValue(':senha', md5($senha));
-        $sql->execute();
-        
-       
-       if ($sql->rowCount() == 1) {
-        
-           $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
-           foreach($lista as $row){
-            $_SESSION['id_funcionario'] = $row['id_funcionario'];
-            $_SESSION['usuario']=  $row['usuario'];
-            $_SESSION['nome'] = $row['nome'];
-            $_SESSION['id_permissao'] = $row['id_permissao'];
-            $_SESSION['token'] = $row['token'];
-           }
-        
-           header("Location: menu.php"); 
-
-       }else{
-
-           $_SESSION['msg'] = '<div class="alert-danger"> senha ou usuário incorreto!</div>';
-            //sheader("Location: index.php"); 
-       }
-         
-}
-
-function menuPrincipal(){
-    
-    include 'config.php';
-
-    $permissao = $_SESSION['id_permissao'];
-
-    $sql = $pdo->query("SELECT * FROM menu_principal WHERE id_permissao <= $permissao");
-    $sql->execute();  
- 
-    while($row = $sql->fetch(PDO::FETCH_ASSOC)){
-
-       
-    $tableMenu = $tableMenu.'<tr>
-        <th>'.$row['botao_menu'].'</th>
-    </tr>';
-    }
-    return $tableMenu;
-}
-
-function informacoesVeiculo($id_veiculo){
-
-    include 'config.php';
-
-    $id_veiculo =  intval($_REQUEST['id_veiculo']);
-    $sql = $pdo->prepare("SELECT * FROM abastecimentos
-	WHERE id_veiculo = :id_veiculo  ORDER BY data_abastecimento DESC LIMIT 1");
-	$sql->bindValue(':id_veiculo', $id_veiculo);
+	$token = md5(time() . rand(0, 9999) . time());
+	$sql = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario");
+	$sql->bindValue(':token', $token);
+	$sql->bindValue(':usuario', $usuario);
 	$sql->execute();
-	$row = $sql->fetch(PDO::FETCH_ASSOC);
-    $ultimoKm = $row['km'];
-    if($row['km'] < 0){$ultimoKm = 0;}
-    $ultimoHr = $row['hr'];
-    if($row['hr'] < 0){$ultimoHr = 0;}
-    
+	if ($sql->rowCount() > 0) {
+	$sql = "SELECT * FROM funcionarios WHERE usuario = :usuario AND senha = :senha";
+	$sql = $pdo->prepare($sql);
+	$sql->bindValue(':usuario', $usuario);
+	$sql->bindValue(':senha', md5($senha));
+	$sql->execute();
 
-    $informacoesVeiculo = [
-        'ultimoKm' => $ultimoKm,
-        'ultimoHr' => $ultimoHr
-    ];
+	if ($sql->rowCount() > 0) {
 
-    return $informacoesVeiculo;
+		while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+			$id_funcionario = $row['id_funcionario'];
+			$tipo_acesso = $row['tipo_acesso'];
+			$nome = $row['nome'];
+			$nome = $row['usuario'];
+			$matricula = $row['matricula'];
+			$token = $row['token'];
+		}
 
+		if ($tipo_acesso['tipo_acesso'] == 1) {
+			$_SESSION['id_funcionario'] = $id_funcionario['id_funcionario'];
+			$_SESSION['tipo_acesso'] = $tipo_acesso['tipo_acesso'];
+			$_SESSION['nome'] = $nome;
+			$_SESSION['usuario'] = $usuario;
+			$_SESSION['matricula'] = $matricula;
+			$_SESSION['token'] = $token;
+			
+			$_SESSION['nome'] = $nome['nome'];
+			header('Location: abastecimento-da-frota');
+			exit();
+		} elseif ($tipo_acesso['tipo_acesso'] == 2) {
+			$_SESSION['id_funcionario'] = $id_funcionario['id_funcionario'];
+			$_SESSION['tipo_acesso'] = $tipo_acesso['tipo_acesso'];
+			$_SESSION['nome'] = $nome;
+			$_SESSION['usuario'] = $usuario;
+			$_SESSION['matricula'] = $matricula;
+			$_SESSION['token'] = $token;
+
+			header('Location: controle-almoxarifado');
+			exit();
+		} else {
+			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
+			header('Location:login-diesel-control-1.0');
+			exit();
+		}
+	}}
+	else {
+			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
+			header('Location:login-diesel-control-1.0');
+			exit();
+		}
 }
-  
-?>
+}

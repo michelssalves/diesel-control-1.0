@@ -52,13 +52,13 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			header('Location: controle-almoxarifado');
 			exit();
 		} else {
-			$_SESSION['msg'] = "<div class='alert alert-danger'></div>";
+			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
 			header('Location:login-diesel-control-1.0');
 			exit();
 		}
 	}}
 	else {
-			$_SESSION['msg'] = "<div class='alert alert-danger'></div>";
+			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
 			header('Location:login-diesel-control-1.0');
 			exit();
 		}
