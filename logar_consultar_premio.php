@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../conexao01.php';
+require 'conexao01.php';
 
 if (isset($_POST['matricula']) && !empty($_POST['matricula']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
 	$matricula = addslashes($_POST['matricula']);

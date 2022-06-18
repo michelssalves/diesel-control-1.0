@@ -1,9 +1,9 @@
 <?php
 session_start();
-require '../conexao01.php';
+require 'conexao01.php';
 
 $id_funcionario = intval($_SESSION['id_funcionario']);
-$keygen = 4;
+$keygen = 2;
 
 
 $sql = $pdo->prepare('SELECT * FROM funcionarios where id_funcionario = :id_funcionario');
@@ -16,17 +16,17 @@ while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
 
 if(!$_SESSION['id_funcionario'] && !$_SESSION['usuario'] && !$_SESSION['nome'] && !$_SESSION['token'] && !$_SESSION['tipo_acesso'] ){
 	session_destroy();
-	header('Location: ../index.php');
+	header('Location: index.php');
 	exit();
 }
 
 if($_SESSION['token'] != $token['token']){
 	session_destroy();
-	header('Location: ../index.php');
+	header('Location: index.php');
 	exit();
 }
 if($tipo_acesso['tipo_acesso'] != $keygen){
 	session_destroy();
-	header('Location: ../index.php');
+	header('Location: index.php');
 	exit();
 }

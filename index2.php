@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../conexao01.php';
+require 'conexao01.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,6 +13,7 @@ require '../conexao01.php';
 </head>
 
 <body>
+
     <div class="container-md">
         <div class="container-lg">
             <div class="container-xl">
@@ -28,17 +29,17 @@ require '../conexao01.php';
                     unset($_SESSION['msg']);
                     ?>
                     <div class="login">
-                        <h1>Consultar Premio</h1>
+                        <h1>Controle de Abastecimentos</h1>
                     </div>
                     <div class="borda">
                         <div class="col-2">
-                            <form class="menu" action="logar_consultar_premio.php" method="POST">
-                                <input name="matricula" name="text" class="input is-large" placeholder="Sua matricula" autofocus=""><br>
+                            <form class="menu" action="logar_controle_de_abastecimento.php" method="POST">
+                                <input name="usuario" name="text" class="input is-large" placeholder="Seu usuario" autofocus=""><br>
                                 <br><input name="senha" class="input is-large" type="password" placeholder="Sua senha" autofocus=""><br>
 
                                 <br><button type="submit" class="btn btn-primary btn-lg btn-block">Logar</button>
                             </form>
-                            <form action="../index.php" method="POST">
+                            <form action="login-diesel-control-1.0" method="POST">
                                 <br><button type="submit" class="btn btn-primary btn-lg btn-block">Voltar</button>
                             </form>
                         </div>

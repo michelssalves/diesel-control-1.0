@@ -1,6 +1,0 @@
-[08-Mar-2022 22:00:17 UTC] PHP Notice:  Undefined index: id_funcionario in /home/u338658684/domains/alvesmichel.cf/public_html/login/verifica_login_premio.php on line 5
-[08-Mar-2022 22:00:17 UTC] PHP Notice:  Undefined index: id_funcionario in /home/u338658684/domains/alvesmichel.cf/public_html/login/verifica_login_premio.php on line 17
-[08-Mar-2022 22:00:17 UTC] PHP Notice:  Undefined index: usuario in /home/u338658684/domains/alvesmichel.cf/public_html/login/verifica_login_premio.php on line 17
-[08-Mar-2022 22:00:17 UTC] PHP Notice:  Undefined index: nome in /home/u338658684/domains/alvesmichel.cf/public_html/login/verifica_login_premio.php on line 17
-[08-Mar-2022 22:00:17 UTC] PHP Notice:  Undefined index: token in /home/u338658684/domains/alvesmichel.cf/public_html/login/verifica_login_premio.php on line 17
-[08-Mar-2022 22:00:17 UTC] PHP Notice:  Undefined index: tipo_acesso in /home/u338658684/domains/alvesmichel.cf/public_html/login/verifica_login_premio.php on line 17

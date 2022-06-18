@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../conexao01.php';
+require 'conexao01.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +39,7 @@ require '../conexao01.php';
 
                                 <br><button type="submit" class="btn btn-primary btn-lg btn-block">Logar</button>
                             </form>
-                            <form action="../index.php" method="POST">
+                            <form action="login-diesel-control-1.0" method="POST">
                                 <br><button type="submit" class="btn btn-primary btn-lg btn-block">Voltar</button>
                             </form>
                         </div>

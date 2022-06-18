@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../conexao01.php';
+require 'conexao01.php';
 
 if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
 	$usuario = addslashes($_POST['usuario']);
