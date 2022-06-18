@@ -8,8 +8,9 @@ $usuario = $_SESSION['usuario'];
 $matricula = $_SESSION['matricula'];
 $token = $_SESSION['token'];
 include '../assets/controllers/checkAcess.php';
+
 $row = [];
-$id_abastecimento = filter_input(INPUT_GET, 'id_abastecimento');
+$id_abastecimento = $_REQUEST['id_abastecimento'];
 
 if ($id_abastecimento) {
 
@@ -24,11 +25,11 @@ if ($id_abastecimento) {
 
         $row = $sql->fetch(PDO::FETCH_ASSOC);
     } else {
-        header("Location: index.php");
+        header("Location: controle-almoxarifado");
         exit;
     }
 } else {
-    header("Location: index.php");
+    header("Location: controle-almoxarifado");
     exit;
 }
 
