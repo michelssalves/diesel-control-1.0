@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../assets/controllers/config.php';
+include '../assets/controllers/config.php';
 ?>
 <!doctype html>
 <html lang="pt-br">

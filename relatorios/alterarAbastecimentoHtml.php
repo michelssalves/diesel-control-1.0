@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../assets/controllers/config.php';
+include '../assets/controllers/config.php';
 $row = [];
 $id_abastecimento = filter_input(INPUT_GET, 'id_abastecimento');
 
