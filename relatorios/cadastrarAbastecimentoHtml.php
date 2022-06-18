@@ -1,9 +1,6 @@
 <?php
-include('../login/verifica_login_relatorio_abastecimento.php');
-if (!isset($_SESSION)) {
-    session_start();
-}
-require_once('../conexao01.php');
+session_start();
+require '../assets/controllers/cofig.php';
 ?>
 <!doctype html>
 <html lang="pt-br">

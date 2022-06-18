@@ -1,9 +1,6 @@
 <?php
-include('../login/verifica_login_registro_abastecimento.php');
-if (!isset($_SESSION)) {
-    session_start();
-}
-require_once('../conexao01.php');
+session_start();
+require '../assets/controllers/cofig.php';
 ?>
 <!doctype html>
 <html lang="pt-br">
@@ -12,7 +9,7 @@ require_once('../conexao01.php');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="diesel-control-1.0/assets/css/style.css">
 </head>
 
 <body>

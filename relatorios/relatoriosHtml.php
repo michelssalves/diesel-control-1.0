@@ -1,10 +1,6 @@
 <?php
-include('../login/verifica_login_relatorio_abastecimento.php');
-require_once('../conexao01.php');
-if (!isset($_SESSION)) {
-    session_start();
-}
-
+session_start();
+require '../assets/controllers/cofig.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +11,7 @@ if (!isset($_SESSION)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" href="diesel-control-1.0/assets/css/style.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../js/filtroTabela.js"></script>
 </head>
