@@ -9,17 +9,15 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 
 	$token = md5(time() . rand(0, 9999) . time());
 	$sql = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario");
-	$sql->bindValue(':token', ($token));
+	$sql->bindValue(':token', $token);
 	$sql->bindValue(':usuario', $usuario);
 	$sql->execute();
-
+	if ($sql->rowCount() > 0) {
 	$sql = "SELECT * FROM funcionarios WHERE usuario = :usuario AND senha = :senha";
 	$sql = $pdo->prepare($sql);
 	$sql->bindValue(':usuario', $usuario);
 	$sql->bindValue(':senha', md5($senha));
 	$sql->execute();
-	$qtde = $sql->rowCount();
-
 
 	if ($sql->rowCount() > 0) {
 
@@ -58,7 +56,7 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			header('Location:login-diesel-control-1.0');
 			exit();
 		}
-	}
+	}}
 	else {
 			$_SESSION['msg'] = "<div class='alert alert-danger'></div>";
 			header('Location:login-diesel-control-1.0');
