@@ -20,7 +20,7 @@ include 'assets/controllers/userDataBaseAcess.php';
 <div>
 <?php if($msgErroLogin){echo $msgErroLogin;session_destroy();}?>
 </div>
-  <form action="logar_controle_de_abastecimento.php" method="POST">
+  <form action="logar-controle" method="POST">
     <h1 class="h3 mb-3 fw-normal">Acesso</h1>
     <div class="form-floating">
       <input type="text" class="form-control" name="usuario" placeholder="Usuario">
