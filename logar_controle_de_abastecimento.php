@@ -41,7 +41,7 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$_SESSION['token'] = $token;
 			
 			$_SESSION['nome'] = $nome['nome'];
-			header('Location: ../registros/registroDeAbastecimento.php');
+			header('Location: abastecimento-da-frota');
 			exit();
 		} elseif ($tipo_acesso['tipo_acesso'] == 2) {
 			$_SESSION['id_funcionario'] = $id_funcionario['id_funcionario'];
@@ -51,7 +51,7 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$_SESSION['matricula'] = $matricula;
 			$_SESSION['token'] = $token;
 
-			header('Location: ../relatorios/relatoriosHtml.php');
+			header('Location: controle-almoxarifado');
 			exit();
 		} else {
 			$_SESSION['msg'] = "<div class='alert alert-danger'></div>";
