@@ -1,0 +1,50 @@
+body{
+    background-color:#4cb050;
+    font-weight: bold;
+    font-size: 25px;
+}
+button{
+    width: 300px;
+    height: 50px
+}
+input{
+    width: 300px;
+    height: 50px;
+    background-color: white;
+} 
+select, option{
+    width: 300px;
+    height: 50px;
+    background-color: white;
+}  
+.table, th, td, tr{
+    border: 1px solid #000;  
+} 
+.table{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;  
+}
+@media (max-width:600px){
+    div{
+        width: 332px;
+    }
+    body{
+        background-color:#4cb050;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    button{
+        width: 300px;
+        height: 50px
+    }
+    input{
+        width: 300px;
+        height: 50px;
+        background-color: white;
+    } 
+    select, option{
+        width: 300px;
+        height: 50px;
+        background-color: white;
+    }    
+}
