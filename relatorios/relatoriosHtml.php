@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../assets/controllers/config.php';
-$id_funcionario =$_SESSION['id_funcionario'];
+$id_funcionario = $_SESSION['id_funcionario'];
 $tipo_acesso = $_SESSION['tipo_acesso'] ;
 $nome = $_SESSION['nome'];
 $usuario = $_SESSION['usuario'];
@@ -25,22 +25,22 @@ include '../assets/controllers/checkAcess.php';
 
 <body>
                     <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-                            <form class="d-flex" action="../controllers/export.php" method="POST">
+                            <form class="d-flex" action="exportar-excel" method="POST">
                             <div class="col-xs-4">
                                 <input name="data_abastecimento"  type="date" placeholder="Pesquisar" aria-label="Pesquisar">
                                 <button class="btn btn-success" type="submit">Exportar Relatório</button>
                             </div> 
                             </form>
-                            <form class="d-flex" action="cadastrarAbastecimentoHtml.php">
+                            <form class="d-flex" action="cadastrar-abastecimento-1.0">
                                 <button class="btn btn-success" type="submit">Cadastrar Abastecimento</button>
                             </form> 
-                            <form class="d-flex" action="cadastrarVeiculoHtml.php">
+                            <form class="d-flex" action="cadastrar-veiculo-1.0">
                                 <button class="btn btn-success" type="submit">Cadastrar Veiculo</button>
                             </form> 
-                            <form class="d-flex" action="alterarVeiculoHtml.php">
+                            <form class="d-flex" action="alterar-veiculo-1.0">
                                 <button class="btn btn-success" type="submit">Alterar Veiculo</button>
                             </form>  
-                                <a href="../login/logout.php" class="btn btn-danger">Sair</a></h2>   
+                                <a href="logout-1.0" class="btn btn-danger">Sair</a></h2>   
                     </nav>
                             <div id="divConteudo">
                                 <table id="tabela" class="table table-striped table-bordered">
@@ -140,10 +140,10 @@ include '../assets/controllers/checkAcess.php';
                                             <td><?php echo $row['setor']; ?></td>
                                             <td>
                                                 <a
-                                                    href="alterarAbastecimentoHtml.php?id_abastecimento=<?= $row['id_abastecimento']; ?>">Alterar</a>
+                                                    href="alterar-abastecimento-1.0<?= $row['id_abastecimento']; ?>">Alterar</a>
                                             </td>
                                             <td>
-                                                <a href="excluir.php?id_abastecimento=<?= $row['id_abastecimento']; ?>"
+                                                <a href="excluir-abastecimento-1.0<?= $row['id_abastecimento']; ?>"
                                                     onclick="return confirm('Tem certeza que deseja excluir')">Excluir</a>
                                             </td>
                                         </tr>

@@ -9,7 +9,6 @@ $matricula = $_SESSION['matricula'];
 $token = $_SESSION['token'];
 include '../assets/controllers/checkAcess.php';
 
-
     $idveiculo = intval($_POST['id']);
 	$sql = $pdo->prepare('SELECT * FROM abastecimentos  
 	WHERE id_veiculo = :idveiculo  ORDER BY data_abastecimento DESC LIMIT 1');

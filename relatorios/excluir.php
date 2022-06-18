@@ -18,7 +18,7 @@ if ($id_abastecimento) {
     $sql->execute();
 
 
-header("Location:relatoriosHtml.php");
+header("Location:controle-almoxarifado");
 exit;
 
 }
