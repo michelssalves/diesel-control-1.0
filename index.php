@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'assets/controllers/cofig.php';
+require 'assets/controllers/config.php';
 include 'assets/controllers/userDataBaseAcess.php';
 $msgErroLogin = $_SESSION['msg']; 
 
@@ -22,7 +22,7 @@ $msgErroLogin = $_SESSION['msg'];
 <div>
 <?php if($msgErroLogin){echo $msgErroLogin;session_destroy();}?>
 </div>
-  <form action="logar-controle" method="POST">
+  <form method="POST">
     <h1 class="h3 mb-3 fw-normal">Acesso</h1>
     <div class="form-floating">
       <input type="text" class="form-control" name="usuario" placeholder="Usuario">

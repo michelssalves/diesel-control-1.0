@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../assets/controllers/cofig.php';
+require '../assets/controllers/config.php';
 ?>
 
 <!DOCTYPE html>

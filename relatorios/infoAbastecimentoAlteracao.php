@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../assets/controllers/cofig.php';
+require '../assets/controllers/config.php';
     $idveiculo = intval($_POST['id']);
 	$sql = $pdo->prepare('SELECT * FROM veiculos AS v  
 	JOIN abastecimentos AS a 
