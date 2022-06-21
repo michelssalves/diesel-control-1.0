@@ -23,7 +23,7 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 
 	if ($sql->rowCount() > 0) {
 
-		while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+		while ($row = $sql->fetchAll(PDO::FETCH_ASSOC)) {
 			$id_funcionario = $row['id_funcionario'];
 			$tipo_acesso = $row['tipo_acesso'];
 			$nome = $row['nome'];
