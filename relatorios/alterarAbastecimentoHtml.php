@@ -140,7 +140,7 @@ if ($id_abastecimento) {
                                         </div>
                                         <br><button type="submit" class="tn btn-primary btn-lg">Alterar Abastecimento</button>
                                 </form>
-                                <form action="relatoriosHtml.php">
+                                <form action="controle-almoxarifado">
                                     <br><button type="submit" class="tn btn-primary btn-lg">Voltar</button>
                                 </form>
                             </div>

@@ -150,7 +150,7 @@ include '../assets/controllers/checkAcess.php';
                             </div>
                             <br><button type="submit" class="tn btn-primary btn-lg">Alterar Veiculo</button>
                     </form>
-                    <form action="relatoriosHtml.php">
+                    <form action="controle-almoxarifado">
                         <br><button type="submit" class="tn btn-primary btn-lg">Voltar</button>
                     </form>
                 </div>
