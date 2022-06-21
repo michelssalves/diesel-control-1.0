@@ -22,7 +22,7 @@ if($acao == 'login'){
 			if ($sql->rowCount() > 0) {
 
 				$lista = $sql->fetchAll(PDO::FETCH_ASSOC);
-
+			}}
 				foreach($lista as $row){
 					$id_funcionario = $row['id_funcionario'];
 					$tipo_acesso = $row['tipo_acesso'];
@@ -58,7 +58,7 @@ if($acao == 'login'){
 						exit();
 					} 
 	
-		}}}else {
+		}else {
 
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
 			header('Location: login-diesel-control-versao-01');
