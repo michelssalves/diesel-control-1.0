@@ -4,10 +4,12 @@ $acao = $_POST['acao'];
 
 if($acao == 'login'){
 
-	$usuario = addslashes($_POST['usuario']);
-	$senha = addslashes($_POST['senha']);
+
 
 if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
+	
+	$usuario = addslashes($_POST['usuario']);
+	$senha = addslashes($_POST['senha']);
 	
 	$token = md5(time() . rand(0, 9999) . time());
 	$sql = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario");
