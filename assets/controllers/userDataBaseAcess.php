@@ -8,7 +8,7 @@ echo $senha = addslashes($_POST['senha']);
 
 if($acao == 'login'){
 
-if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
+//if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
 	
 	
 	$token = md5(time() . rand(0, 9999) . time());
@@ -72,4 +72,3 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 		//	header('Location:login-diesel-control-v1');
 		//	exit();
 		}
-}
