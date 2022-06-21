@@ -22,10 +22,10 @@ foreach($lista as $row){
 
 if($idLogado <> $id_funcionario || $tokenLogado <> $token){
     session_destroy();
-    header("Location: login-diesel-control-1.0");
+    header("Location: login-diesel-control-v1");
 }
 if($acao == 'sair'){
     session_destroy();
-    header("Location:  login-diesel-control-1.0");
+    header("Location:  login-diesel-control-v1");
 }
 ?>
