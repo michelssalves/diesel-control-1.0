@@ -94,9 +94,8 @@ if($litros_od < $abastecimento){
 		$sql->bindValue(':dataabastecimento2', $dataabastecimento2);
 		$sql->execute();
 		$_SESSION['msg'] = "<div class='alert alert-sucess'>Cadastro Realizado com Sucesso!</div>";
-		header("Location: abastecimento-da-frota");
-		exit;
     	header("Location: abastecimento-da-frota");
+		
 		}else{
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Não foi encontrado esse veiculo!</div>";
 			header("Location: abastecimento-da-frota");
