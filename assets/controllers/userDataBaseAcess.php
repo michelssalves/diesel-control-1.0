@@ -43,7 +43,7 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$_SESSION['usuario'] = $usuario;
 			$_SESSION['matricula'] = $matricula;
 			$_SESSION['token'] = $token;
-			$_SESSION['nome'] = $nome;
+	
 
 			header('Location: abastecimento-da-frota');
 			exit();
