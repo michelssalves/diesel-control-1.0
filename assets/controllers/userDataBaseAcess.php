@@ -10,16 +10,14 @@ if($acao == 'login'){
 if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
 	
 	
-
 	$token = md5(time() . rand(0, 9999) . time());
-	$sql = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario");
+	$sql = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario AND senha = :senha");
 	$sql->bindValue(':token', $token);
 	$sql->bindValue(':usuario', $usuario);
+	$sql->bindValue(':senha', md5($senha));
 	$sql->execute();
 
-		
-	$sql = "SELECT * FROM funcionarios WHERE usuario = :usuario AND senha = :senha";
-	$sql = $pdo->prepare($sql);
+	$sql = $pdo->prepare("SELECT * FROM funcionarios WHERE usuario = :usuario AND senha = :senha");
 	$sql->bindValue(':usuario', $usuario);
 	$sql->bindValue(':senha', md5($senha));
 	$sql->execute();
