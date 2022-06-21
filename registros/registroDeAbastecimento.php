@@ -244,13 +244,13 @@ include '../assets/controllers/checkAcess.php';
         </div>
     </div>
 </body>
-<script src="../js/jquery.js"></script>
+<script src="diesel-control-1.0/assets/js/jquery.js"></script>
 
 </html>
-<script src="../js/infoAbastecimentoCadastro.js"></script>
-<script src="../js/infoEquipamentoCadastro.js"></script>
-<script src="../js/validaNum.js"></script>
-<script src="../js/calcLitros.js"></script>
-<script src="../js/calcKm.js"></script>
-<script src="../js/calcHr.js"></script>
-<script src="../js/calcMedia.js"></script>
+<script src="diesel-control-1.0/assets/js/infoAbastecimentoCadastro.js"></script>
+<script src="diesel-control-1.0/assets/js/infoEquipamentoCadastro.js"></script>
+<script src="diesel-control-1.0/assets/js/validaNum.js"></script>
+<script src="diesel-control-1.0/assets/js/calcLitros.js"></script>
+<script src="diesel-control-1.0/assets/js/calcKm.js"></script>
+<script src="diesel-control-1.0/assets/js/calcHr.js"></script>
+<script src="diesel-control-1.0/assets/js/calcMedia.js"></script>
