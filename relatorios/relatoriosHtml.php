@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../assets/controllers/config.php';
+include '../assets/controllers/export.php';
 $id_funcionario = $_SESSION['id_funcionario'];
 $tipo_acesso = $_SESSION['tipo_acesso'] ;
 $nome = $_SESSION['nome'];
@@ -22,9 +23,6 @@ include '../assets/controllers/checkAcess.php';
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
         <form class="d-flex" method="POST">
-            <?php include '../assets/controllers/config.php'; 
-                include '../assets/controllers/export.php';
-            ?>
             <div class="col-xs-4">
                 <input name="data_abastecimento" type="date" placeholder="Pesquisar" aria-label="Pesquisar">
                 <button class="btn btn-success" name="acao" value="exportar" type="submit">Exportar Relatório</button>
