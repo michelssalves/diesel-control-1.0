@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $acao = $_POST['acao'];
 
 if($acao == 'login'){
