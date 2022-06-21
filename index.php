@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'assets/controllers/config.php';
-include 'assets/controllers/userDataBaseAcess.php';
+//include 'assets/controllers/userDataBaseAcess.php';
 $msgErroLogin = $_SESSION['msg']; 
 
 ?>
