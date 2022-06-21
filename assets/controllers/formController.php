@@ -34,7 +34,7 @@ $datahora2 = $datahora1->format("d-m-Y H:i:s");
 $dataabastecimento2 = $datahora1->format("Y-m-d");
 $diferenca = 3000;
 $abastecimento = 400;
-
+if($_POST['id_veiculo']){
 if($litros_od < $abastecimento){
 	if($id_veiculo){
 		if($id_veiculo){
@@ -95,7 +95,7 @@ if($litros_od < $abastecimento){
 		$sql->execute();
 		$_SESSION['msg'] = "<div class='alert alert-sucess'>Cadastro Realizado com Sucesso!</div>";
     	header("Location: abastecimento-da-frota");
-		
+
 		}else{
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Não foi encontrado esse veiculo!</div>";
 			header("Location: abastecimento-da-frota");
@@ -112,7 +112,7 @@ if($litros_od < $abastecimento){
 	header("Location: abastecimento-da-frota");
 	exit;
 }	
-
+}
 
   
 
