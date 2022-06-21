@@ -12,13 +12,12 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 	
 	
 	$token = md5(time() . rand(0, 9999) . time());
-	$sqlToken = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario AND senha = :senha");
-	$sqlToken->bindValue(':token', $token);
-	$sqlToken->bindValue(':usuario', $usuario);
-	$sqlToken->bindValue(':senha', md5($senha));
-	$sqlToken->execute();
-
-	var_dump($sqlToken);
+	$sql = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario AND senha = :senha");
+	$sql->bindValue(':token', $token);
+	$sql->bindValue(':usuario', $usuario);
+	$sql->bindValue(':senha', md5($senha));
+	$sql->execute();
+	var_dump($sql);
 
 	$sql = $pdo->prepare("SELECT * FROM funcionarios WHERE usuario = :usuario AND senha = :senha");
 	$sql->bindValue(':usuario', $usuario);
@@ -28,8 +27,9 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 	var_dump($sql);
 
 	if ($sql->rowCount() > 0) {
-		
-		while ($row = $sql->fetchAll(PDO::FETCH_ASSOC)) {
+
+		$lista = $sql->fetchAll(PDO::FETCH_ASSOC);
+		foreach($lista as $row){
 			$id_funcionario = $row['id_funcionario'];
 			$tipo_acesso = $row['tipo_acesso'];
 			$nome = $row['nome'];
@@ -37,6 +37,7 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$matricula = $row['matricula'];
 			$token = $row['token'];
 		}
+		
 		var_dump($row);
 		if ($tipo_acesso == 1) {
 	
