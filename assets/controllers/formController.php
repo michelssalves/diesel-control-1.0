@@ -1,6 +1,5 @@
 <?php
 session_start();
-include '../assets/controllers/config.php';
 $id_funcionario = $_SESSION['id_funcionario'];
 $tipo_acesso = $_SESSION['tipo_acesso'] ;
 $nome = $_SESSION['nome'];
@@ -9,6 +8,10 @@ $matricula = $_SESSION['matricula'];
 $token = $_SESSION['token'];
 include '../assets/controllers/checkAcess.php';
 
+$acao = $_REQUEST['acao'];
+
+if($acao == 'registrar-abastecimento'){
+	
 $id_veiculo = $_POST['id_veiculo'];
 $numero_equipamento = $_POST['numero_equipamento'];
 $placa = $_POST['placa'];
@@ -34,7 +37,7 @@ $datahora2 = $datahora1->format("d-m-Y H:i:s");
 $dataabastecimento2 = $datahora1->format("Y-m-d");
 $diferenca = 3000;
 $abastecimento = 400;
-if($_POST['id_veiculo']){
+
 if($litros_od < $abastecimento){
 	if($id_veiculo){
 		if($id_veiculo){
@@ -113,6 +116,11 @@ if($litros_od < $abastecimento){
 	exit;
 }	
 }
+
+
+
+
+
 
   
 

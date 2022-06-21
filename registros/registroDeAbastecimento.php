@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../assets/controllers/config.php';
+include '../assets/controllers/formController.php';
 $id_funcionario = $_SESSION['id_funcionario'];
 $tipo_acesso = $_SESSION['tipo_acesso'] ;
 $nome = $_SESSION['nome'];
@@ -31,12 +32,11 @@ include '../assets/controllers/checkAcess.php';
         ?>
 
     </div>
-
     <div class="container-md">
         <div class="container-lg">
             <div class="container-xl">
                 <div class="container-xxl">
-                    <form class="menu" name="form1" id="form1" action="abastecimento-da-frota-c" method="POST">
+                    <form class="menu" method="POST">
                         <div class="field">
                             <div class="control">
                                 <input readonly hidden id="frentista" name="frentista" type="text" class="form-control" value="<?= $_SESSION['usuario']; ?>" autofocus>
@@ -167,7 +167,7 @@ include '../assets/controllers/checkAcess.php';
                             <input readonly hidden type="text" id="metodo" name="metodo" required>
                         </div>
                     </div>
-                    <br><button type="submit" class="tn btn-primary btn-lg">Cadastrar</button>
+                    <br><button type="submit" name="acao" value="registrar-abastecimento" class="tn btn-primary btn-lg">Cadastrar</button>
                     </form>
                     
                     <br><a href="logout-v1"><button type="button" class="tn btn-danger btn-lg">SAIR</button></a>
