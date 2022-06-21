@@ -21,10 +21,13 @@ include '../assets/controllers/checkAcess.php';
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-        <form class="d-flex" action="exportar-excel" method="POST">
+        <form class="d-flex" method="POST">
+            <?php include '../assets/controllers/config.php'; 
+                include '../assets/controllers/export.php';
+            ?>
             <div class="col-xs-4">
-                <input name="data_abastecimento"  type="date" placeholder="Pesquisar" aria-label="Pesquisar">
-                <button class="btn btn-success" type="submit">Exportar Relatório</button>
+                <input name="data_abastecimento" type="date" placeholder="Pesquisar" aria-label="Pesquisar">
+                <button class="btn btn-success" name="acao" value="exportar" type="submit">Exportar Relatório</button>
             </div> 
         </form>
         <form class="d-flex" action="cadastrar-abastecimento-v1">
