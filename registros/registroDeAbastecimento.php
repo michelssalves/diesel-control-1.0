@@ -39,13 +39,13 @@ include '../assets/controllers/checkAcess.php';
                     <form class="menu" name="form1" id="form1" action="../controllers/formController.php" method="POST">
                         <div class="field">
                             <div class="control">
-                                <input readonly hidden id="frentista" name="frentista" type="text" class="form-control" value="<?php echo $_SESSION['usuario']; ?>" autofocus>
+                                <input readonly hidden id="frentista" name="frentista" type="text" class="form-control" value="<?= $_SESSION['usuario']; ?>" autofocus>
                             </div>
                         </div>
                         <div class="field">
                             <div class="control">
                                 <label>Usuario Logado</label>
-                                <input readonly id="nome" name="nome" type="text" class="form-control" value="<?php echo $_SESSION['nome']; ?>" autofocus>
+                                <input readonly id="nome" name="nome" type="text" class="form-control" value="<?= $_SESSION['nome']; ?>" autofocus>
                             </div>
                         </div>
                         <div class="field">

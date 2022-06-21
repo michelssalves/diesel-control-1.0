@@ -27,7 +27,7 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$id_funcionario = $row['id_funcionario'];
 			$tipo_acesso = $row['tipo_acesso'];
 			$nome = $row['nome'];
-			$nome = $row['usuario'];
+			$usuario = $row['usuario'];
 			$matricula = $row['matricula'];
 			$token = $row['token'];
 		}
