@@ -170,7 +170,7 @@ include '../assets/controllers/checkAcess.php';
                     <br><button type="submit" class="tn btn-primary btn-lg">Cadastrar</button>
                     </form>
                     
-                    <br><a href="logout-v1"><button type="submit" class="tn btn-danger btn-lg">SAIR</button></a>
+                    <br><a href="logout-v1"><button type="button" class="tn btn-danger btn-lg">SAIR</button></a>
 
             </div>
         </div>
