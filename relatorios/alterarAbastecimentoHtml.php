@@ -43,10 +43,8 @@ if ($id_abastecimento) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
     <div class="container-sm">
-
     </div>
     <div class="container-md">
         <div class="container-lg">
@@ -55,7 +53,7 @@ if ($id_abastecimento) {
                     <div class="container-fluid">
                         <div class="field">
                             <div class="control">
-                                <form action="../controllers/alterarAbastecimento.php" method="POST">
+                                <form action="alterar-abastecimento-v1-a" method="POST">
                                     <div class="field">
                                         <div class="control">
                                             <label>Numero do Equipamento</label>

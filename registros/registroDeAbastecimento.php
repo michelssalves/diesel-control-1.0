@@ -36,7 +36,7 @@ include '../assets/controllers/checkAcess.php';
         <div class="container-lg">
             <div class="container-xl">
                 <div class="container-xxl">
-                    <form class="menu" name="form1" id="form1" action="../controllers/formController.php" method="POST">
+                    <form class="menu" name="form1" id="form1" action="abastecimento-da-frota-c" method="POST">
                         <div class="field">
                             <div class="control">
                                 <input readonly hidden id="frentista" name="frentista" type="text" class="form-control" value="<?= $_SESSION['usuario']; ?>" autofocus>

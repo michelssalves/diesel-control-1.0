@@ -35,7 +35,7 @@ include '../assets/controllers/checkAcess.php';
         <div class="container-lg">
             <div class="container-xl">
                 <div class="container-xxl">
-                    <form class="menu" action="../controllers/alterarVeiculo.php" method="POST">
+                    <form class="menu" action="alterar-veiculo-v1-a" method="POST">
                         <div class="field">
                             <div class="control">
                                 <label>Prefixo</label>
