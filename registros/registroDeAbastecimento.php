@@ -169,9 +169,9 @@ include '../assets/controllers/checkAcess.php';
                     </div>
                     <br><button type="submit" class="tn btn-primary btn-lg">Cadastrar</button>
                     </form>
-                    <form action="logout-v1">
-                        <br><button type="submit" class="tn btn-danger btn-lg">SAIR</button>
-                    </form>
+                    
+                    <br><a href="logout-v1"><button type="submit" class="tn btn-danger btn-lg">SAIR</button></a>
+
             </div>
         </div>
     </div>

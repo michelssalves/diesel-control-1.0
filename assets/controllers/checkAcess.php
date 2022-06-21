@@ -1,12 +1,11 @@
 <?php
-session_start();
+
 include 'config.php';
-$base= $_SERVER['DOCUMENT_ROOT'].'/diesel-control/index.php';
+
 $acao = $_REQUEST['acao'];
 
 $id_funcionario = $_SESSION['id_funcionario'];
 $token = $_SESSION['token'];
-
 
 $sql = $pdo->prepare("SELECT * FROM funcionarios WHERE id_funcionario = :id_funcionario");
 $sql->bindValue(':id_funcionario',$id_funcionario);
@@ -23,9 +22,5 @@ foreach($lista as $row){
 if($idLogado <> $id_funcionario || $tokenLogado <> $token){
     session_destroy();
     header("Location: login-diesel-control-v1");
-}
-if($acao == 'sair'){
-    session_destroy();
-    header("Location:  login-diesel-control-v1");
 }
 ?>
