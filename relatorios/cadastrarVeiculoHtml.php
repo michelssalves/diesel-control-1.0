@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../assets/controllers/config.php';
+include '../assets/controllers/cadastrarVeiculo.php';
 $id_funcionario = $_SESSION['id_funcionario'];
 $tipo_acesso = $_SESSION['tipo_acesso'] ;
 $nome = $_SESSION['nome'];
@@ -35,7 +36,7 @@ include '../assets/controllers/checkAcess.php';
         <div class="container-lg">
             <div class="container-xl">
                 <div class="container-xxl">
-                    <form class="menu" action="cadastrar-veiculo-v1-c" method="POST">
+                    <form class="menu" method="POST">
                         <div class="field">
                             <div class="control">
                                 <label>Prefixo</label>
@@ -121,7 +122,7 @@ include '../assets/controllers/checkAcess.php';
                                 <br><input id="status_veiculo" name="status_veiculo" type="text" class="form-control" placeholder="Status" autofocus required>
                             </div>
                         </div>
-                        <br><button type="submit" class="tn btn-primary btn-lg">Cadastrar Veiculo</button>
+                        <br><button type="submit" name="acao" value="cadastrar-veiculo" class="tn btn-primary btn-lg">Cadastrar Veiculo</button>
                     </form>
                     <form action="controle-almoxarifado">
                         <br><button type="submit" class="tn btn-primary btn-lg">Voltar</button>

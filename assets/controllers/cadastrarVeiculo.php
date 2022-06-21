@@ -1,6 +1,5 @@
 <?php
 session_start();
-include '../assets/controllers/config.php';
 $id_funcionario = $_SESSION['id_funcionario'];
 $tipo_acesso = $_SESSION['tipo_acesso'] ;
 $nome = $_SESSION['nome'];
@@ -8,6 +7,10 @@ $usuario = $_SESSION['usuario'];
 $matricula = $_SESSION['matricula'];
 $token = $_SESSION['token'];
 include '../assets/controllers/checkAcess.php';
+
+$acao = $_REQUEST['acao'];
+
+if($acao == 'cadastrar-veiculo'){
 
 $numero_equipamento = strtoupper($_POST['numero_equipamento']);
 $prefixo = strtoupper($_POST['prefixo']);
@@ -92,7 +95,7 @@ if($numero_equipamento){
 	header("Location: cadastrar-veiculo-v1");
 	exit;
 }	
-
+}
 
   
 

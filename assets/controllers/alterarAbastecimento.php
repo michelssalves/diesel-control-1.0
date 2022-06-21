@@ -9,6 +9,10 @@ $matricula = $_SESSION['matricula'];
 $token = $_SESSION['token'];
 include '../assets/controllers/checkAcess.php';
 
+$acao = $_REQUEST['acao'];
+
+if($acao == 'alterar-abastecimento'){
+
 $combustivel = $_POST['combustivel'];
 $odometroinicial = $_POST['odometroinicial'];
 $odometrofinal = $_POST['odometrofinal'];
@@ -58,5 +62,5 @@ if($id_veiculo){
         header("Location: alterar-abastecimento-v1");
      exit;
     }
-
+}
  

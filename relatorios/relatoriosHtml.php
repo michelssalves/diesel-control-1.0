@@ -22,12 +22,10 @@ include '../assets/controllers/checkAcess.php';
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-        <form class="d-flex" action="exportar-excel" method="POST">
             <div class="col-xs-4">
                 <input name="data_abastecimento"  type="date" placeholder="Pesquisar" aria-label="Pesquisar">
-                <button class="btn btn-success" type="submit">Exportar Relatório</button>
+                <a href="exportar-excel"><button class="btn btn-success" type="submit">Exportar Relatório</button></a>
             </div> 
-        </form>
         <form class="d-flex" action="cadastrar-abastecimento-v1">
             <button class="btn btn-success" type="submit">Cadastrar Abastecimento</button>
         </form> 

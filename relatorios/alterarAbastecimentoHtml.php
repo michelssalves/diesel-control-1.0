@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../assets/controllers/config.php';
+include '../assets/controllers/alterarAbastecimento.php';
 $id_funcionario = $_SESSION['id_funcionario'];
 $tipo_acesso = $_SESSION['tipo_acesso'] ;
 $nome = $_SESSION['nome'];
@@ -53,7 +54,7 @@ if ($id_abastecimento) {
                     <div class="container-fluid">
                         <div class="field">
                             <div class="control">
-                                <form action="alterar-abastecimento-v1-a" method="POST">
+                                <form method="POST">
                                     <div class="field">
                                         <div class="control">
                                             <label>Numero do Equipamento</label>
@@ -135,7 +136,7 @@ if ($id_abastecimento) {
                                                 <input  readonly hidden id="id_abastecimento" name="id_abastecimento" value="<?= $row['id_abastecimento']; ?>" required>
                                             </div>
                                         </div>
-                                        <br><button type="submit" class="tn btn-primary btn-lg">Alterar Abastecimento</button>
+                                        <br><button type="submit" name="acao" value="alterar-abastecimento" class="tn btn-primary btn-lg">Alterar Abastecimento</button>
                                 </form>
                                 <form action="controle-almoxarifado">
                                     <br><button type="submit" class="tn btn-primary btn-lg">Voltar</button>

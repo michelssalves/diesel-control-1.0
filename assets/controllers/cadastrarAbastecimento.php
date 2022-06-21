@@ -1,6 +1,5 @@
 <?php
 session_start();
-include '../assets/controllers/config.php';
 $id_funcionario = $_SESSION['id_funcionario'];
 $tipo_acesso = $_SESSION['tipo_acesso'] ;
 $nome = $_SESSION['nome'];
@@ -8,6 +7,10 @@ $usuario = $_SESSION['usuario'];
 $matricula = $_SESSION['matricula'];
 $token = $_SESSION['token'];
 include '../assets/controllers/checkAcess.php';
+
+$acao = $_REQUEST['acao'];
+
+if($acao == 'cadastrar-abastecimento'){
 
 $combustivel = $_POST['combustivel'];
 $id_veiculo = $_POST['id_veiculo'];
@@ -87,7 +90,7 @@ $dataabastecimento2 = $datahora1->format("Y-m-d");
 			header("Location: cadastrar-abastecimento-v1");
 			exit;
 		}
-
+	}
 
 
   

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../assets/controllers/config.php';
+include '../assets/controllers/alterarVeiculo.php';
 $id_funcionario = $_SESSION['id_funcionario'];
 $tipo_acesso = $_SESSION['tipo_acesso'] ;
 $nome = $_SESSION['nome'];
@@ -35,7 +36,7 @@ include '../assets/controllers/checkAcess.php';
         <div class="container-lg">
             <div class="container-xl">
                 <div class="container-xxl">
-                    <form class="menu" action="alterar-veiculo-v1-a" method="POST">
+                    <form class="menu" method="POST">
                         <div class="field">
                             <div class="control">
                                 <label>Prefixo</label>
@@ -148,7 +149,7 @@ include '../assets/controllers/checkAcess.php';
                                     <input  readonly hidden type="text" id="prefixoo" name="prefixo" required>
                                 </div>
                             </div>
-                            <br><button type="submit" class="tn btn-primary btn-lg">Alterar Veiculo</button>
+                            <br><button type="submit" name="acao" value="alterar-veiculo" class="tn btn-primary btn-lg">Alterar Veiculo</button>
                     </form>
                     <form action="controle-almoxarifado">
                         <br><button type="submit" class="tn btn-primary btn-lg">Voltar</button>

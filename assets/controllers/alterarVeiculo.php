@@ -9,6 +9,10 @@ $matricula = $_SESSION['matricula'];
 $token = $_SESSION['token'];
 include '../assets/controllers/checkAcess.php';
 
+$acao = $_REQUEST['acao'];
+
+if($acao == 'alterar-veiculo'){
+
 $id_veiculo = intval($_POST['id_veiculo']);
 $numero_equipamento = strtoupper($_POST['numero_equipamento']);
 $prefixo = strtoupper($_POST['prefixo']);
@@ -79,7 +83,7 @@ if($id_veiculo){
 	header("Location: alterar-veiculo-v1");
 	exit;
 }	
-
+}
 
   
 

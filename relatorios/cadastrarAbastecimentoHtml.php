@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../assets/controllers/config.php';
+include '../assets/controllers/cadastrarAbastecimento.php';
 $id_funcionario = $_SESSION['id_funcionario'];
 $tipo_acesso = $_SESSION['tipo_acesso'] ;
 $nome = $_SESSION['nome'];
@@ -35,7 +36,7 @@ include '../assets/controllers/checkAcess.php';
         <div class="container-lg">
             <div class="container-xl">
                 <div class="container-xxl">
-                    <form name="form1" id="form1" class="menu" action="cadastrar-abastecimento-v1-c" method="POST">
+                    <form class="menu"  method="POST">
                         <div class="field">
                             <div class="control">
                                 <label>Prefixo</label>
@@ -192,7 +193,7 @@ include '../assets/controllers/checkAcess.php';
                                     <input readonly hidden type="text" id="combustivel" name="combustivel" required>
                                 </div>
                             </div>
-                            <br><button type="submit" class="tn btn-primary btn-lg">Cadastrar</button>
+                            <br><button type="submit" name="acao" value="cadastrar-abastecimento" class="tn btn-primary btn-lg">Cadastrar</button>
                     </form>
                     <form action="controle-almoxarifado">
                         <br><button type="submit" class="tn btn-primary btn-lg">Voltar</button>

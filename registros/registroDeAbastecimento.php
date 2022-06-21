@@ -245,7 +245,6 @@ include '../assets/controllers/checkAcess.php';
     </div>
 </body>
 <script src="diesel-control-1.0/assets/js/jquery.js"></script>
-
 </html>
 <script src="diesel-control-1.0/assets/js/infoAbastecimentoCadastro.js"></script>
 <script src="diesel-control-1.0/assets/js/infoEquipamentoCadastro.js"></script>
