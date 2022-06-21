@@ -24,6 +24,8 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 	$sql->bindValue(':senha', md5($senha));
 	$sql->execute();
 
+	var_dump($sql);
+
 	if ($sql->rowCount() > 0) {
 		
 
@@ -61,13 +63,13 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 		//	exit();
 		} else {
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
-			header('Location:login-diesel-control-v1');
+		//	header('Location:login-diesel-control-v1');
 		//	exit();
 		}
 	}}
 	else {
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
-			header('Location:login-diesel-control-v1');
+		//	header('Location:login-diesel-control-v1');
 		//	exit();
 		}
 }
