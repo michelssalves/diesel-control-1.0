@@ -101,5 +101,5 @@ header("Content-Disposition: attachment; filename=\"$fileName\"");
 // Render excel data 
 echo $excelData; 
  
-exit;
+
 ?>
