@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$acao == $_REQUEST['acao'];
+$acao = $_REQUEST['acao'];
 
 if($acao == 'sair'){
     session_destroy();
