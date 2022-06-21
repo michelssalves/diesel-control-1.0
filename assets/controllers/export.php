@@ -10,6 +10,7 @@ include '../assets/controllers/checkAcess.php';
 
 $acao = $_REQUEST['acao'];
 if($acao == 'exportar'){
+
 $data_abastecimento = date_create($_POST['data_abastecimento']);
 $data_abastecimento1 = date_format($data_abastecimento, 'Y-m-d H:i:s');
 //$numero_equipamento = $_POST['numero_equipamento'];
@@ -101,6 +102,6 @@ header("Content-Disposition: attachment; filename=\"$fileName\"");
  
 // Render excel data 
 echo $excelData; 
+exit;
 }
-
 ?>
