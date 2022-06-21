@@ -1,12 +1,12 @@
 <?php
 $acao = $_POST['acao'];
 
-$usuario = addslashes($_POST['usuario']);
-$senha = addslashes($_POST['senha']);
-
 if($acao == 'login'){
 	if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
-	
+		
+		$usuario = addslashes($_POST['usuario']);
+		$senha = addslashes($_POST['senha']);
+
 		$token = md5(time() . rand(0, 9999) . time());
 		$sql = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario AND senha = :senha");
 		$sql->bindValue(':token', $token);
@@ -22,7 +22,7 @@ if($acao == 'login'){
 			if ($sql->rowCount() > 0) {
 
 				$lista = $sql->fetchAll(PDO::FETCH_ASSOC);
-			}}
+			}
 				foreach($lista as $row){
 					$id_funcionario = $row['id_funcionario'];
 					$tipo_acesso = $row['tipo_acesso'];
@@ -64,3 +64,4 @@ if($acao == 'login'){
 			header('Location: login-diesel-control-versao-01');
 			exit();
 		}
+	}
