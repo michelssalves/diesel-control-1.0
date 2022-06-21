@@ -14,7 +14,7 @@ if($acao == 'exportar'){
 
 $data_abastecimento = date('Y-m-d', strtotime($_POST['data_abastecimento']));
 if($data_abastecimento == ''){$data_abastecimento = date('Y-m-d');}
-
+echo $data_abastecimento;
 //$numero_equipamento = $_POST['numero_equipamento'];
 // Filter the excel data 
 function filterData(&$str){ 
