@@ -8,10 +8,11 @@ $matricula = $_SESSION['matricula'];
 $token = $_SESSION['token'];
 include '../assets/controllers/checkAcess.php';
 
+
 $acao = $_REQUEST['acao'];
 if($acao == 'exportar'){
 
-$data_abastecimento = date_create($_POST['data_abastecimento']);
+$data_abastecimento = date('Y-m-d', strtotime($_POST['data_abastecimento']));
 if($data_abastecimento == ''){$data_abastecimento = date('Y-m-d');}
 
 //$numero_equipamento = $_POST['numero_equipamento'];
