@@ -1,6 +1,6 @@
 $("#prefixo").on("change", function () {
     $.ajax({
-        url: 'diesel-control-1.0/relatorios/infoAbastecimentoCadastro.php',
+        url: 'diesel-control-1.0/registros/infoAbastecimentoCadastro.php',
         type: 'POST',
         dataType: "json",
         data: {id: $("#prefixo").val() },
