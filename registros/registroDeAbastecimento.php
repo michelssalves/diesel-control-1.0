@@ -1,12 +1,12 @@
 <?php
 session_start();
 include '../assets/controllers/config.php';
-$id_funcionario = $_SESSION['id_funcionario'];
-$tipo_acesso = $_SESSION['tipo_acesso'] ;
-$nome = $_SESSION['nome'];
-$usuario = $_SESSION['usuario'];
-$matricula = $_SESSION['matricula'];
-$token = $_SESSION['token'];
+echo $id_funcionario = $_SESSION['id_funcionario'];
+echo $tipo_acesso = $_SESSION['tipo_acesso'] ;
+echo $nome = $_SESSION['nome'];
+echo $usuario = $_SESSION['usuario'];
+echo $matricula = $_SESSION['matricula'];
+echo $token = $_SESSION['token'];
 include '../assets/controllers/checkAcess.php';
 
 ?>
