@@ -6,7 +6,7 @@ $acao = $_POST['acao'];
 echo $usuario = addslashes($_POST['usuario']);
 echo $senha = addslashes($_POST['senha']);
 
-if($acao == 'login'){
+//if($acao == 'login'){
 
 //if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
 	
@@ -66,7 +66,7 @@ if($acao == 'login'){
 		//	header('Location:login-diesel-control-v1');
 		//	exit();
 		}
-	}}
+	}
 	else {
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
 		//	header('Location:login-diesel-control-v1');
