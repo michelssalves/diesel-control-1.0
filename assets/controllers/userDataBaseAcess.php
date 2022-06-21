@@ -1,6 +1,4 @@
 <?php
-include 'config.php';
-
 $acao = $_POST['acao'];
 
 $usuario = addslashes($_POST['usuario']);
@@ -26,6 +24,7 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 	if ($sql->rowCount() > 0) {
 
 		$lista = $sql->fetchAll(PDO::FETCH_ASSOC);
+
 		foreach($lista as $row){
 			$id_funcionario = $row['id_funcionario'];
 			$tipo_acesso = $row['tipo_acesso'];
@@ -43,7 +42,6 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$_SESSION['usuario'] = $usuario;
 			$_SESSION['matricula'] = $matricula;
 			$_SESSION['token'] = $token;
-			$_SESSION['nome'] = $nome;
 
 			header('Location: abastecimento-da-frota');
 			exit();
@@ -58,15 +56,11 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$_SESSION['matricula'] = $matricula;
 			$_SESSION['token'] = $token;
 			
-		header('Location: controle-almoxarifado');
+			header('Location: controle-almoxarifado');
 			exit();
-		} else {
-			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
-			header('Location:login-diesel-control-v1');
-			exit();
-		}
-	}
-}}else {
+		} 
+	
+}}}else {
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
 			header('Location:login-diesel-control-v1');
 			exit();
