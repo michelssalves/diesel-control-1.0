@@ -12,7 +12,8 @@ $acao = $_REQUEST['acao'];
 if($acao == 'exportar'){
 
 $data_abastecimento = date_create($_POST['data_abastecimento']);
-$data_abastecimento1 = date_format($data_abastecimento, 'Y-m-d H:i:s');
+if($data_abastecimento == ''){$data_abastecimento = date('Y-m-d');}
+
 //$numero_equipamento = $_POST['numero_equipamento'];
 // Filter the excel data 
 function filterData(&$str){ 
@@ -55,8 +56,8 @@ $excelData = implode("\t", array_values($fields)) . "\n";
 $sql = $pdo->prepare("SELECT * FROM veiculos AS v  
 JOIN abastecimentos AS a 
 ON a.id_veiculo = v.id_veiculo
-WHERE dataabastecimento2 = :data_abastecimento1");
-$sql->bindValue(':data_abastecimento1', $data_abastecimento1);
+WHERE dataabastecimento2 = :data_abastecimento");
+$sql->bindValue(':data_abastecimento', $data_abastecimento);
 $sql->execute();
 if($sql->rowCount() > 0){
     // Output each row of the data 
