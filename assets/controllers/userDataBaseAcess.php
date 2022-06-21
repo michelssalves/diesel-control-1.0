@@ -61,6 +61,6 @@ if($acao == 'login'){
 		}}}else {
 
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
-			header('Location:login-diesel-control-v1');
+			header('Location: login-diesel-control-versao-01');
 			exit();
 		}
