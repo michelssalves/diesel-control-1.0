@@ -9,15 +9,13 @@ if($acao == 'login'){
 
 if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
 	
-	echo $usuario;
+	
 
 	$token = md5(time() . rand(0, 9999) . time());
 	$sql = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario");
 	$sql->bindValue(':token', $token);
 	$sql->bindValue(':usuario', $usuario);
 	$sql->execute();
-
-	if ($sql->rowCount() > 0) {
 
 		
 	$sql = "SELECT * FROM funcionarios WHERE usuario = :usuario AND senha = :senha";
@@ -50,8 +48,8 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$_SESSION['token'] = $token;
 			$_SESSION['nome'] = $nome['nome'];
 
-			//header('Location: abastecimento-da-frota');
-		//	exit();
+			header('Location: abastecimento-da-frota');
+			exit();
 
 		} elseif ($tipo_acesso == 2) {
 
@@ -62,8 +60,8 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$_SESSION['matricula'] = $matricula;
 			$_SESSION['token'] = $token;
 			
-		//	header('Location: controle-almoxarifado');
-		//	exit();
+		header('Location: controle-almoxarifado');
+			exit();
 		} else {
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
 		//	header('Location:login-diesel-control-v1');
@@ -75,5 +73,4 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 		//	header('Location:login-diesel-control-v1');
 		//	exit();
 		}
-}
 }
