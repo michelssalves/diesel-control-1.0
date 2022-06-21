@@ -35,7 +35,7 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$matricula = $row['matricula'];
 			$token = $row['token'];
 		}
-
+		var_dump($row);
 		if ($tipo_acesso == 1) {
 	
 			$_SESSION['id_funcionario'] = $id_funcionario;
@@ -44,10 +44,11 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$_SESSION['usuario'] = $usuario;
 			$_SESSION['matricula'] = $matricula;
 			$_SESSION['token'] = $token;
-			
 			$_SESSION['nome'] = $nome['nome'];
-			header('Location: abastecimento-da-frota');
-			exit();
+
+			//header('Location: abastecimento-da-frota');
+		//	exit();
+
 		} elseif ($tipo_acesso == 2) {
 			$_SESSION['id_funcionario'] = $id_funcionario;
 			$_SESSION['tipo_acesso'] = $tipo_acesso;
@@ -56,18 +57,18 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 			$_SESSION['matricula'] = $matricula;
 			$_SESSION['token'] = $token;
 			
-			header('Location: controle-almoxarifado');
-			exit();
+		//	header('Location: controle-almoxarifado');
+		//	exit();
 		} else {
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
 			header('Location:login-diesel-control-v1');
-			exit();
+		//	exit();
 		}
 	}}
 	else {
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Usuário ou senha incorreta!</div>";
 			header('Location:login-diesel-control-v1');
-			exit();
+		//	exit();
 		}
 }
 }
