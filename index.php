@@ -22,7 +22,7 @@ $msgErroLogin = $_SESSION['msg'];
 <div>
 <?php if($msgErroLogin){echo $msgErroLogin;session_destroy();}?>
 </div>
-  <form method="get">
+  <form method="post">
     <h1 class="h3 mb-3 fw-normal">Acesso</h1>
     <div class="form-floating">
       <input type="text" class="form-control" name="usuario" placeholder="Usuario">

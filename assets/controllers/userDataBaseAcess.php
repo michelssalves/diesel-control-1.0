@@ -24,7 +24,7 @@ if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha
 	$sql->bindValue(':senha', md5($senha));
 	$sql->execute();
 
-	var_dump($sql);
+	var_dump($sql->rowCount());
 
 	if ($sql->rowCount() > 0) {
 
