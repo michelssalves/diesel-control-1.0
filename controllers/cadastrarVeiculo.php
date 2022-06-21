@@ -1,9 +1,13 @@
 <?php
-include('../verifica_login_relatorio_abastecimento.php');
-if (!isset($_SESSION)) {
-    session_start();
-}
-require_once('../conexao01.php');
+session_start();
+include '../assets/controllers/config.php';
+$id_funcionario = $_SESSION['id_funcionario'];
+$tipo_acesso = $_SESSION['tipo_acesso'] ;
+$nome = $_SESSION['nome'];
+$usuario = $_SESSION['usuario'];
+$matricula = $_SESSION['matricula'];
+$token = $_SESSION['token'];
+include '../assets/controllers/checkAcess.php';
 
 $numero_equipamento = strtoupper($_POST['numero_equipamento']);
 $prefixo = strtoupper($_POST['prefixo']);
@@ -70,23 +74,22 @@ if($numero_equipamento){
 			$sql->bindValue(':setor', $setor);
 			$sql->bindValue(':status_veiculo', $status_veiculo);
 			$sql->execute();
-		   header("Location: ../relatorios/relatoriosHtml.php");
+		   header("Location: controle-almoxarifado");
 			exit;
 
 		}else{
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Não foi encontrado esse veiculo!</div>";
-			header("../relatorios/cadastrarVeiculoHtml.php");
+			header("cadastrar-veiculo-v1");
 			exit;
 		}
-
 }else{
 	$_SESSION['msg'] = "<div class='alert alert-danger'>O Km Informado está incorreto!</div>";
-	header("../relatorios/cadastrarVeiculoHtml.php");
+	header("cadastrar-veiculo-v1");
 	exit;
 }
 }else{
 	$_SESSION['msg'] = "<div class='alert alert-danger'>O Odometro informado está incorreto!</div>";
-	header("Location: ../relatorios/cadastrarVeiculoHtml.php");
+	header("Location: cadastrar-veiculo-v1");
 	exit;
 }	
 

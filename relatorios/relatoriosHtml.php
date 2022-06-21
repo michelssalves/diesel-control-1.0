@@ -28,16 +28,16 @@ include '../assets/controllers/checkAcess.php';
                 <button class="btn btn-success" type="submit">Exportar Relatório</button>
             </div> 
         </form>
-        <form class="d-flex" action="cadastrar-abastecimento-1.0">
+        <form class="d-flex" action="cadastrar-abastecimento-v1">
             <button class="btn btn-success" type="submit">Cadastrar Abastecimento</button>
         </form> 
-        <form class="d-flex" action="cadastrar-veiculo-1.0">
+        <form class="d-flex" action="cadastrar-veiculo-v1">
             <button class="btn btn-success" type="submit">Cadastrar Veiculo</button>
         </form> 
-        <form class="d-flex" action="alterar-veiculo-1.0">
+        <form class="d-flex" action="alterar-veiculo-v1">
             <button class="btn btn-success" type="submit">Alterar Veiculo</button>
         </form>  
-            <a href="logout-1.0" class="btn btn-danger">Sair</a></h2>   
+            <a href="logout-v1" class="btn btn-danger">Sair</a></h2>   
     </nav>
         <div id="divConteudo">
             <table id="tabela" class="table table-striped table-bordered">

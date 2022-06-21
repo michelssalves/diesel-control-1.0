@@ -1,9 +1,14 @@
 <?php
-include('../login/verifica_login_relatorio_abastecimento.php');
-if (!isset($_SESSION)) {
-    session_start();
-}
-require_once('../conexao01.php');
+session_start();
+include '../assets/controllers/config.php';
+$id_funcionario = $_SESSION['id_funcionario'];
+$tipo_acesso = $_SESSION['tipo_acesso'] ;
+$nome = $_SESSION['nome'];
+$usuario = $_SESSION['usuario'];
+$matricula = $_SESSION['matricula'];
+$token = $_SESSION['token'];
+include '../assets/controllers/checkAcess.php';
+
 $data_abastecimento = date_create($_POST['data_abastecimento']);
 $data_abastecimento1 = date_format($data_abastecimento, 'Y-m-d H:i:s');
 //$numero_equipamento = $_POST['numero_equipamento'];

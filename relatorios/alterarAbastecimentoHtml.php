@@ -131,7 +131,6 @@ if ($id_abastecimento) {
                                             name="litros_od" type="text" value="<?= $row['litros_od'];?>" class="form-control" placeholder="Litros Od" autofocus>
                                         </div>
                                     </div>
-                                    <!–campos ocultos para que nao haja alteraçao direta –>
                                         <div class="field">
                                             <div class="control">
                                                 <input readonly hidden id="id_veiculo" name="id_veiculo" value="<?= $row['id_veiculo']; ?>" required type="text">

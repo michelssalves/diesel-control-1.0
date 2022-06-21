@@ -169,7 +169,7 @@ include '../assets/controllers/checkAcess.php';
                     </div>
                     <br><button type="submit" class="tn btn-primary btn-lg">Cadastrar</button>
                     </form>
-                    <form action="../login/logout.php">
+                    <form action="logout-v1">
                         <br><button type="submit" class="tn btn-danger btn-lg">SAIR</button>
                     </form>
             </div>

@@ -1,9 +1,13 @@
 <?php
-include('../verifica_login_relatorio_abastecimento.php');
-if (!isset($_SESSION)) {
-    session_start();
-}
-require_once('../conexao01.php');
+session_start();
+include '../assets/controllers/config.php';
+$id_funcionario = $_SESSION['id_funcionario'];
+$tipo_acesso = $_SESSION['tipo_acesso'] ;
+$nome = $_SESSION['nome'];
+$usuario = $_SESSION['usuario'];
+$matricula = $_SESSION['matricula'];
+$token = $_SESSION['token'];
+include '../assets/controllers/checkAcess.php';
 
 $combustivel = $_POST['combustivel'];
 $id_veiculo = $_POST['id_veiculo'];
@@ -76,11 +80,11 @@ $dataabastecimento2 = $datahora1->format("Y-m-d");
 		$sql->bindValue(':dataabastecimento2', $dataabastecimento2);
 		$sql->execute();
 		$_SESSION['msg'] = "<div class='alert alert-sucess'>Cadastro Realizado com Sucesso!</div>";
-		header("Location: ../relatorios/cadastrarAbastecimentoHtml.php");
+		header("Location: controle-almoxarifado");
 		exit;
 		}else{
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Não foi encontrado esse veiculo!</div>";
-			header("Location: ../relatorios/cadastrarAbastecimentoHtml.php");
+			header("Location: cadastrar-abastecimento-v1");
 			exit;
 		}
 

@@ -1,9 +1,13 @@
 <?php
-include('../verifica_login_registro_abastecimento.php');
-if (!isset($_SESSION)) {
-    session_start();
-}
-require_once ('../conexao01.php');
+session_start();
+include '../assets/controllers/config.php';
+$id_funcionario = $_SESSION['id_funcionario'];
+$tipo_acesso = $_SESSION['tipo_acesso'] ;
+$nome = $_SESSION['nome'];
+$usuario = $_SESSION['usuario'];
+$matricula = $_SESSION['matricula'];
+$token = $_SESSION['token'];
+include '../assets/controllers/checkAcess.php';
 
 $id_veiculo = $_POST['id_veiculo'];
 $numero_equipamento = $_POST['numero_equipamento'];
@@ -16,7 +20,9 @@ $prefixo = $_POST['prefixo'];
 $ultimokm = $_POST['ultimokm']; 
 $km = $_POST['km']; 
 $diferencakm = $_POST['diferencakm'];
+$ultimohr = $_POST['ultimohr']; 
 $hr = $_POST['hr']; 
+$diferencahr = $_POST['diferencahr']; 
 $combustivel = $_POST['combustivel']; 
 $odometroinicial = $_POST['odometroinicial']; 
 $odometrofinal = $_POST['odometrofinal']; 
@@ -41,7 +47,9 @@ if($litros_od < $abastecimento){
 		ultimokm,	
 		km,
 		diferencakm,
-		hr, 
+		ultimohr,
+		hr,
+		diferencahr,
 		frentista,	
 		odometrofinal, 
 		litros,
@@ -57,7 +65,9 @@ if($litros_od < $abastecimento){
 		:ultimokm,
 		:km, 
 		:diferencakm,
-		:hr, 
+	    :ultimohr,
+		:hr,
+		:diferencahr,
 		:frentista,
 		:odometrofinal,
 		:litros,
@@ -72,7 +82,9 @@ if($litros_od < $abastecimento){
 		$sql->bindValue(':ultimokm', $ultimokm);
 		$sql->bindValue(':km', $km);
 		$sql->bindValue(':diferencakm', $diferencakm);
+		$sql->bindValue(':ultimohr', $ultimohr);
 		$sql->bindValue(':hr', $hr);
+		$sql->bindValue(':diferencahr', $diferencahr);
 		$sql->bindValue(':frentista', $frentista);
 		$sql->bindValue(':odometrofinal', $odometrofinal);
 		$sql->bindValue(':litros', $litros);
@@ -82,26 +94,23 @@ if($litros_od < $abastecimento){
 		$sql->bindValue(':dataabastecimento2', $dataabastecimento2);
 		$sql->execute();
 		$_SESSION['msg'] = "<div class='alert alert-sucess'>Cadastro Realizado com Sucesso!</div>";
-		header("Location: ../registros/registroDeAbastecimento.php");
+		header("Location: abastecimento-da-frota");
 		exit;
-    	header("Location: ../registros/registroDeAbastecimento.php");
-
-
-
+    	header("Location: abastecimento-da-frota");
 		}else{
 			$_SESSION['msg'] = "<div class='alert alert-danger'>Não foi encontrado esse veiculo!</div>";
-			header("Location: ../registros/registroDeAbastecimento.php");
+			header("Location: abastecimento-da-frota");
 			exit;
 		}
 
 }else{
 	$_SESSION['msg'] = "<div class='alert alert-danger'>O Km Informado está incorreto!</div>";
-	header("Location: ../registros/registroDeAbastecimento.php");
+	header("Location: abastecimento-da-frota");
 	exit;
 }
 }else{
 	$_SESSION['msg'] = "<div class='alert alert-danger'>O Odometro informado está incorreto!</div>";
-	header("Location: ../registros/registroDeAbastecimento.php");
+	header("Location: abastecimento-da-frota");
 	exit;
 }	
 

@@ -1,9 +1,13 @@
 <?php
-include('../verifica_login_relatorio_abastecimento.php');
-if (!isset($_SESSION)) {
-    session_start();
-}
-require_once('../conexao01.php');
+session_start();
+include '../assets/controllers/config.php';
+$id_funcionario = $_SESSION['id_funcionario'];
+$tipo_acesso = $_SESSION['tipo_acesso'] ;
+$nome = $_SESSION['nome'];
+$usuario = $_SESSION['usuario'];
+$matricula = $_SESSION['matricula'];
+$token = $_SESSION['token'];
+include '../assets/controllers/checkAcess.php';
 
 $combustivel = $_POST['combustivel'];
 $odometroinicial = $_POST['odometroinicial'];
@@ -48,10 +52,10 @@ if($id_veiculo){
         $sql->bindValue(':media', $media);
         $sql->bindValue(':id_abastecimento', $id_abastecimento);
         $sql->execute();
-       header("Location: ../relatorios/relatoriosHtml.php");
+       header("Location: controle-almoxarifado");
         exit;
     } else {
-        header("Location: ../relatorios/alterarAbastecimentoHtml.php");
+        header("Location: alterar-abastecimento-v1");
      exit;
     }
 
