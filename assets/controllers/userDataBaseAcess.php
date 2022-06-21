@@ -9,7 +9,7 @@ if($acao == 'login'){
 
 if (isset($_POST['usuario']) && !empty($_POST['usuario']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
 	
-
+	echo $usuario;
 
 	$token = md5(time() . rand(0, 9999) . time());
 	$sql = $pdo->prepare("UPDATE funcionarios SET token = :token WHERE usuario = :usuario");
