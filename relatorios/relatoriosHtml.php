@@ -22,7 +22,7 @@ include '../assets/controllers/checkAcess.php';
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-        <form class="d-flex" method="get">
+        <form class="d-flex" method="POST">
             <div class="col-xs-4">
                 <input name="data_abastecimento" type="date" placeholder="Pesquisar" aria-label="Pesquisar">
                 <button class="btn btn-success" name="acao" value="exportar" type="submit">Exportar Relatório</button>

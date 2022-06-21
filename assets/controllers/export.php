@@ -12,10 +12,12 @@ include '../assets/controllers/checkAcess.php';
 $acao = $_REQUEST['acao'];
 if($acao == 'exportar'){
 
-$data_abastecimento = date('Y-m-d', strtotime($_POST['data_abastecimento']));
-if($data_abastecimento == ''){$data_abastecimento = date('Y-m-d');}
-echo '<script>alert(<?= $data_abastecimento ?>)</script>';
-//$numero_equipamento = $_POST['numero_equipamento'];
+
+
+if($data_abastecimento == ''){$data_abastecimento = date('Y-m-d');}else{
+    $data_abastecimento = date('Y-m-d', strtotime($_POST['data_abastecimento']));
+}
+
 // Filter the excel data 
 function filterData(&$str){ 
     $str = preg_replace("/\t/", "\\t", $str); 
