@@ -1,6 +1,6 @@
 $("#prefixo").on("change", function () {
     $.ajax({
-        url: 'infoAbastecimentoCadastro.php',
+        url: 'relatorios/infoAbastecimentoCadastro.php',
         type: 'POST',
         dataType: "json",
         data: {id: $("#prefixo").val() },
