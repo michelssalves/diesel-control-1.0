@@ -14,7 +14,7 @@ if($acao == 'exportar'){
 
 
 
-if($data_abastecimento == ''){$data_abastecimento = date('Y-m-d');}else{
+if($_POST['data_abastecimento'] == ''){$data_abastecimento = date('Y-m-d');}else{
     $data_abastecimento = date('Y-m-d', strtotime($_POST['data_abastecimento']));
 }
 
