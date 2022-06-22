@@ -183,8 +183,6 @@ include '../assets/controllers/checkAcess.php';
                                 <br><input readonly id="media" name="media" type="text" class="form-control" placeholder="Media" autofocus required>
                             </div>
                         </div>
-            
-                        <!–campos ocultos que recebem valores atraves do ajax–>
                             <div class="field">
                                 <div class="control">
                                     <input readonly hidden type="text" id="id_veiculo" name="id_veiculo" required>
